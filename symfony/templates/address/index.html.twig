@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Address tool</h1>
+
+    {{ form_start(form) }}
+
+    {{ form_errors(form) }}
+    <table style="width:50%">
+        <tr>
+            <td>{{ form_row(form.number) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_row(form.voie) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_row(form.postal_code) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_row(form.city) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_row(form.country) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_row(form.ip) }}</td>
+        </tr>
+    </table>
+
+    <br/><br/>
+
+    {{ form_row(form.save, { 'label': 'process' }) }}
+    {{ form_end(form) }}
+
+    {% block content %}{% endblock %}
+{% endblock %}
