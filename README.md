@@ -1,5 +1,4 @@
 # test-technique
-test-technique
 
 clone the repository
 
