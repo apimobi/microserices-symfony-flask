@@ -6,3 +6,27 @@ services:
             - "5555:5000"
         volumes:
             - ./flask:/code
+        networks:
+            - php
+    php:
+        build: docker/php-fpm
+        #tty: true
+        ports:
+            - '9002:9000'
+        volumes:
+            - ./symfony:/var/www/symfony:cached
+        networks:
+            - php
+    nginx:
+        build: docker/nginx
+        ports:
+            - '8888:80'
+        depends_on: 
+            - php
+        volumes:
+            - ./symfony:/var/www/symfony:cached
+            - ./logs/nginx/:/var/log/nginx:cached
+        networks:
+            - php
+networks:
+    php:
