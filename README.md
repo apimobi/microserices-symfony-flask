@@ -7,9 +7,14 @@ clone the repository
 edit flask/.env with the right api keys
 
 # build project
+
+Dans un terminal :
 ```
 docker-compose build
 docker-compose up
+```
+Dans un autre terminal :
+```
 docker-compose exec php sh
 composer install --prefer-dist
 ```
