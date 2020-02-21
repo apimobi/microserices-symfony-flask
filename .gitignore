@@ -1,2 +1,2 @@
 /flask/.env.dev
-/logs/*
+/logs/nginx/*.log
